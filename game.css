@@ -1,0 +1,22 @@
+#grid {
+  border: 1px solid #666666;
+  width: 198px;
+}
+
+.cell {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000000;
+  float:left;
+  text-align: center;
+  overflow: hidden;
+}
+
+.rowEnd {
+  clear: both;
+  padding:20px;
+}
+
+.background {
+  background-color: #c1c1c1;
+}

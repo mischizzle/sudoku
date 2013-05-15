@@ -1,0 +1,47 @@
+<html>
+<head>
+  <title></title>
+
+  <link rel="stylesheet" type="text/css" href="game.css">
+
+</head>
+<body>
+
+  <div id="grid"></div>
+
+
+
+  <script type="text/javascript" src="game.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+  <script type="text/javascript">
+    
+    $(document).ready(function(){
+
+      grid.start();
+      
+      for(var i=1; i<=9; i++) {
+        for(var j=1; j<=9; j++) {
+          var bg;
+
+          if(i <= 3 && j <= 3 || i >= 7 && j >= 7) {
+            //bg = "background";
+          } else {
+            bg = "";
+          }
+
+          var container = "<div id="+ i + "" + j +" class='cell "+ bg +"'>"+ grid.getGrid(i, j) +"</div>";
+          $("#grid").append(container);
+        }
+      }
+
+      $(".cell").on("click", function(){
+        alert($(this).attr("id"));
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
