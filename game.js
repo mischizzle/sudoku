@@ -24,6 +24,7 @@ var grid = {
   checkNum: function(row, column) {
     var randomNumber = this.getRand();
     if(this.checkRow(row, randomNumber) && this.checkBlock(row, column, randomNumber)) {
+    //if(this.checkRow(row, randomNumber) && this.checkBlock(row, column, randomNumber)) {
       return randomNumber;
     } else {
       return this.checkNum(row, column);

@@ -7,39 +7,33 @@
 </head>
 <body>
 
-  <div id="grid"></div>
+   <div id="grid"></div>
 
+  <!--<script type="text/javascript" src="game.js"></script>-->
 
-
-  <script type="text/javascript" src="game.js"></script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="generator.js"></script>
+  
 
   <script type="text/javascript">
-    
+
+    thePuzzle = new Sudoku();
+    thePuzzle.newGame();
+    thePuzzle.solveGame();
+
     $(document).ready(function(){
-
-      grid.start();
       
-      for(var i=0; i<9; i++) {
-        for(var j=0; j<9; j++) {
-          var bg;
-
-          if(i < 3 && j < 3 || i >= 6 && j >= 6) {
-            bg = "background";
-          } else {
-            bg = "";
-          }
-
-          var container = "<div id="+ i + "" + j +" class='cell "+ bg +"'>"+ grid.getGrid(i, j) +"</div>";
-          $("#grid").append(container);
-        }
+      for(var i=0; i<81; i++) {
+        var bg;
+        var container = "<div id="+ i +" class='cell "+ bg +"'>"+ thePuzzle.matrix[i] +"</div>";
+        $("#grid").append(container);
       }
 
       $(".cell").on("click", function(){
         alert($(this).attr("id"));
       });
-
     });
+
 
   </script>
 
